@@ -1,0 +1,65 @@
+body {
+	background-image: url("../images/main-4.jpg");
+	font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 32px;
+}
+.menu a {
+color: white;
+font-weight: 600;
+}
+.price{
+height: 1000px;
+width: 800px;
+margin: 0 auto;
+margin-top: 600px;
+margin-bottom: 100px;
+padding: 0;
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: space-between;
+}
+.price-flex{
+width: 390px;
+height: 490px;
+border: 2px solid black;
+margin: 0;
+padding: 30px 20px;
+color: black;
+}
+.price-flex:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.5)
+}
+h3,h2{
+text-align: center;
+margin: 0;
+padding: 0;
+}
+table{
+border-collapse: collapse;
+width: 100%;
+margin-top: 50px;
+vertical-align: bottom;
+}
+td{
+padding-top: 30px;
+border-bottom: 2px solid lightgrey;
+}
+.td-right{
+text-align: right;
+}
+	button {
+margin-top: 60px;
+margin-left: 30px;
+padding:10px;
+border:none;
+background-color:#6C6968;
+color:#fff;
+font-weight:600;
+width:80%;
+font-size: 16px;
+}
+button:hover{
+background-color:black;
+}

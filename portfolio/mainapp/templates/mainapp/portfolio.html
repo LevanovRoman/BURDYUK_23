@@ -1,0 +1,44 @@
+{% extends 'mainapp/home.html' %}
+{% load static %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'mainapp/css/style-portfolio.css' %}">
+<style>
+	.portfolio-1{row-gap: 10px;}
+	.portfolio-2{row-gap: 10px;}
+</style>
+{% endblock %}
+{% block main %}
+    <main class="main-page">
+		<div class="container">
+		<h1 class="heading"><span>Невероятное</span> собрание <span>прекрасных</span> работ</h1>
+		</div>
+	</main>
+{% endblock main %}
+{% block content %}
+    	<section class="portfolio">
+		<div class="portfolio-menu">
+			<ul class="port-menu">
+				{% for p in port %}
+				<li><a href="{{ p.get_absolute_url }}">{{ p.title}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="portfolio-1">
+			<div class="port-flex1"><img src="{% static 'mainapp/new-image/portfolio-1.jpg' %}" alt="Фото из порфолио"></div>
+			<div class="port-flex2"><img src="{% static 'mainapp/new-image/portfolio-2.jpg' %}" alt="Фото из порфолио"></div>
+			<div class="port-flex3"><img src="{% static 'mainapp/new-image/portfolio-3.jpg' %}" alt="Фото из порфолио"></div>
+			<div class="port-flex4"><img src="{% static 'mainapp/new-image/portfolio-4.jpg' %}" alt="Фото из порфолио"></div>
+			<div class="port-flex5"><img src="{% static 'mainapp/new-image/portfolio-5.jpg' %}" alt="Фото из порфолио"></div>
+		</div>
+		<div class="portfolio-2">
+			<div class="port-flex"><img src="{% static 'mainapp/new-image/portfolio-6.jpg' %}" alt="Фото из порфолио"></div>
+			<div class="port-flex"><img src="{% static 'mainapp/new-image/portfolio-7.jpg' %}" alt="Фото из порфолио"></div>
+			<div class="port-flex"><img src="{% static 'mainapp/new-image/portfolio-8.jpg' %}" alt="Фото из порфолио"></div>
+			<div class="port-flex"><img src="{% static 'mainapp/new-image/portfolio-9.jpg' %}" alt="Фото из порфолио"></div>
+			<div class="port-flex"><img src="{% static 'mainapp/new-image/portfolio-10.jpg' %}" alt="Фото из порфолио"></div>
+		</div>
+	</section>
+{% endblock content %}
+
+{% block content2 %}
+{% endblock content2 %}

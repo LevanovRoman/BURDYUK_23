@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Подтверждение почты</title>
+   <style>
+        body{ color: blue;}
+    </style>
+</head>
+<body>
+  {% if success %}
+    <p>Вы успешно подтвердили свой электронный адрес</p>
+  {% else %}
+    <p>Ошибка, неправильный токен</p>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,10 @@
+html{
+    background:url("../new-image/page404.jpg") no-repeat center center;
+    min-height:100%;
+    background-size:cover;
+}
+.link{
+color: white;
+margin: 0 auto;
+margin-top: 400px;
+}

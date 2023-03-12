@@ -1,0 +1,47 @@
+{% extends 'mainapp/home.html' %}
+{% load static %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'mainapp/css/style-blog-post.css' %}">
+<style>
+ body {
+	background-image: url("{{ post.photo_big.url }}");
+	font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+    }
+  </style>
+{% endblock %}
+{% block main %}
+<main class="main-page">
+		<div class="container">
+		<h1 class="heading">{{ post.title }}</h1>
+		</div>
+	</main>
+{% endblock main %}
+{% block content %}
+<section class="post-page">
+ 	<p class="post-content">{{ post.content }}</p>
+</section>
+<section class="comment-post">
+    <hr>
+    <p>Комментарии: ({{ post.comments.all.count }}) </p>
+    {% for item in post.comments.all %}
+    <div class="comments">
+        <p class="author"> {{ item.author }} </p>
+        <p>  {{ item.text }} </p>
+        <p class="date-comm"> {{ item.created }}</p>
+    </div>
+    {% endfor %}
+{% if request.user.is_authenticated %}
+    <p>А что думаешь ты,<span class="author-red"> {{ request.user.username }}</span>, по этому поводу?</p>
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">Добавить</button>
+    </form>
+ {% else %}
+    <h3>Зарегистрируйтесь и сможете оставить комментарий</h3>
+  {% endif %}
+</section>
+{% endblock content %}
+{% block contacts %}{% endblock contacts %}
+
+{% block content2 %}{% endblock content2 %}

@@ -1,0 +1,49 @@
+{% extends 'mainapp/home.html' %}
+{% load static %}
+{% load mainapp_tags %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'mainapp/css/style-blog.css' %}">
+{% endblock %}
+{% block main %}
+	<main class="main-page">
+		<div class="container">
+		<h1 class="heading"><span>Нетленная</span> проза моя</h1>
+		</div>
+	</main>
+{% endblock main %}
+{% block content %}
+	<section class="blog-page">
+		<div class="blog-sort">
+			{% getcats as cats%}
+			<ul class="blog-menu">
+			{% if cat_selected == 0 %}
+				<li class="selected">Все категории</li>
+			{% else %}
+				<li><a href="{% url 'blog' %}">Все категории</a></li>
+			{% endif %}
+
+			{% for c in cats %}
+				{% if c.pk == cat_selected %}
+					<li class="selected">{{c.name}}</li>
+				{% else %}
+					<li><a href="{{ c.get_absolute_url }}">{{c.name}}</a></li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+		</div>
+		<div id="blog-posts" class="blog-cards">
+			{% for p in object_list %}
+			<div class="blog-card-page 1">
+				<div class="blog-foto-page"><img src="{{ p.photo.url }}" alt=""></div>
+				<div class="blog-title-page"><p><a href="{{ p.get_absolute_url }}">{{ p.title|truncatewords:12 }}</a></p></div>
+				<div class="blog-date-page"><p>{{ p.time_create }}</p></div>
+			</div>
+			{% endfor %}
+		</div>
+		{% include "mainapp/pagination.html" %}
+	<script type="text/javascript" src="{% static 'mainapp/js/pagination.js' %}"></script>
+	</section>
+{% endblock content %}
+
+{% block content2 %}
+{% endblock content2 %}

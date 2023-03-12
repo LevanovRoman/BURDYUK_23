@@ -1,0 +1,66 @@
+
+.reg-section, .comment-post{
+	color: black;
+	}
+.comment-post{
+width:800px;
+margin: 0 auto;
+height: auto;
+}
+.comments{
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin: 12px 0;
+}
+.author{
+ font-size: 20px;
+ font-weight: 500;
+  margin-right: 15px;
+  margin-left: 15px;
+  color: red;
+}
+p{
+margin:5px;
+}
+.date-comm{
+ font-size: 14px;
+}
+.form-control{
+width: 100%;
+rows:5;
+font-size: 18px;
+border: 2px solid #ccc;
+background-color: #eee;
+  border-radius: 5px;
+  padding: 15px;
+outline: none;
+}
+.author-red{
+color: red;
+font-size: 20px;
+ font-weight: 500;
+}
+button {
+margin: 15px 30px 30px;
+padding:10px 50px;
+border:none;
+background-color:lightgrey;
+color:black;
+font-weight:600;
+font-size: 18px;
+}
+
+
+.post-page{
+	height: auto;
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 300px;
+	margin-bottom: 100px;
+	padding: 0;
+}
+.post-content{
+color: black;
+font-size: 18px;
+}

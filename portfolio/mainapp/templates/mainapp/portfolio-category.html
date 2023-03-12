@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title }}</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Old+Standard+TT&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'mainapp/css/style-portfolio-category.css' %}">
+</head>
+<body>
+    <header class="page-header">
+			<ul class="menu">
+				{% for m in menu %}
+				<li><a href="{% url m.url_name %}">{{m.title}}</a></li>
+				{% endfor %}
+			</ul>
+	</header>
+
+    <div class="container">
+		<h2 class="heading">{{ post.title }}</h2>
+    </div>
+
+<div class="header" id="myHeader">
+  <button class="btn" onclick="one()">Побольше</button>
+  <button class="btn active" onclick="two()">Мой любимый размер</button>
+  <button class="btn" onclick="four()">Поменьше</button>
+</div>
+
+<div class="row">
+  <div class="column">
+    <img src="{{ post.col_1_1.url }}" style="width:100%">
+    <img src="{{ post.col_1_2.url }}" style="width:100%">
+    <img src="{{ post.col_1_3.url }}" style="width:100%">
+    <img src="{{ post.col_1_4.url }}" style="width:100%">
+    <img src="{{ post.col_1_5.url }}" style="width:100%">
+    <img src="{{ post.col_1_6.url }}" style="width:100%">
+    <img src="{{ post.col_1_7.url }}" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{{ post.col_2_1.url }}" style="width:100%">
+    <img src="{{ post.col_2_2.url }}" style="width:100%">
+    <img src="{{ post.col_2_3.url }}" style="width:100%">
+    <img src="{{ post.col_2_4.url }}" style="width:100%">
+    <img src="{{ post.col_2_5.url }}" style="width:100%">
+    <img src="{{ post.col_2_6.url }}" style="width:100%">
+    <img src="{{ post.col_2_7.url }}" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{{ post.col_3_1.url }}" style="width:100%">
+    <img src="{{ post.col_3_2.url }}" style="width:100%">
+    <img src="{{ post.col_3_3.url }}" style="width:100%">
+    <img src="{{ post.col_3_4.url }}" style="width:100%">
+    <img src="{{ post.col_3_5.url }}" style="width:100%">
+    <img src="{{ post.col_3_6.url }}" style="width:100%">
+    <img src="{{ post.col_3_7.url }}" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{{ post.col_4_1.url }}" style="width:100%">
+    <img src="{{ post.col_4_2.url }}" style="width:100%">
+    <img src="{{ post.col_4_3.url }}" style="width:100%">
+    <img src="{{ post.col_4_4.url }}" style="width:100%">
+    <img src="{{ post.col_4_5.url }}" style="width:100%">
+    <img src="{{ post.col_4_6.url }}" style="width:100%">
+    <img src="{{ post.col_4_7.url }}" style="width:100%">
+  </div>
+</div>
+
+<script src="{% static 'mainapp/js/portfolio-cat.js' %}">
+</script>
+</body>
+</html>

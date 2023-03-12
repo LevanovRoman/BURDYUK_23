@@ -1,0 +1,77 @@
+body {
+	background-image: url("../images/main-5.jpg");
+	font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 32px;
+}
+.contacts-page{
+height: 910px;
+width: 810px;
+margin: 0 auto;
+margin-top: 600px;
+margin-bottom: 100px;
+padding: 0;
+display: flex;
+flex-wrap: wrap;
+ color: black;
+}
+.title{
+height: 100px;
+width: 100%;
+padding-left: 30px;
+}
+.cont{
+height: 400px;
+width: 400px;
+}
+.photo_1{
+position: relative;
+}
+.cont2{
+position: absolute;
+top: 65px;
+left: 220px;}
+.forms{
+text-align: right;
+}
+.form-input{
+width: 80%;
+padding: 10px;
+margin: 10px;
+border: 2px solid lightgray;
+ font-size: 16px;
+}
+textarea{
+width: 80%;
+padding: 10px;
+margin: 10px;
+border: 2px solid lightgray;
+font-size: 16px;
+}
+button {
+margin: 10px;
+padding:10px;
+border:none;
+background-color:black;
+color:#fff;
+font-weight:600;
+width:80%;
+font-size: 16px;
+}
+.title2 > p{
+font-weight:600;
+font-size: 22px;
+padding: 0;
+margin: 0;
+}
+.title2{
+padding-top: 30px;
+}
+.phone-mail{
+margin: 20px;
+padding: 20px;
+}
+p.write{
+margin-left: 20px;
+margin-top: 20px;
+}

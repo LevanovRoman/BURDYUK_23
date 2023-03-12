@@ -1,0 +1,47 @@
+body {
+	background-image: url("../images/main-3.jpg");
+	font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 32px;
+}
+.portfolio{
+height: 1370px;
+width: 800px;
+margin: 0 auto;
+margin-top: 400px;
+margin-bottom: 100px;
+padding: 0;
+}
+.portfolio-menu{
+height: 80px;
+}
+.port-menu{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+list-style-type: none;
+}
+.portfolio-1{
+height: 720px;
+margin-bottom: 10px;
+display: grid;
+grid-template-areas:
+"one   two  two"
+"one four five"
+"three  four five";
+gap: 10px;
+}
+.port-flex1{grid-area: one;}
+.port-flex2{grid-area: two;}
+.port-flex3{grid-area: three;}
+.port-flex4{grid-area: four;}
+.port-flex5{grid-area: five;}
+
+.portfolio-2{
+height: 560px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+gap: 10px;
+}
+

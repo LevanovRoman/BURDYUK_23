@@ -1,0 +1,56 @@
+<style>
+a.page-link{
+text-decoration: none;
+color: black;
+font-weight: 500;
+}
+ul.pagination {
+display: flex;
+justify-content: center;
+list-style-type: none;
+}
+li.page-item {
+margin-right: 40px;
+}
+.active{
+color: red;
+}
+</style>
+
+<div class="container mt-5">
+	<nav id="pagination">
+		<ul class="pagination justify-content-center">
+			{% if object_list.has_previous %}
+				<li class="page-item">
+					<a class="page-link" href="{{ request.path }}?page={{ object_list.previous_page_number }}">&lt;</a>
+				</li>
+			{% else %}
+				<li class="page-item disabled">
+					<a hidden class="page-link" href="#" tabindex="-1" aria-disabled="true">&lt;</a>
+				</li>
+			{% endif %}
+			{% for i in object_list.paginator.page_range %}
+				{% if object_list.number == i %}
+					<li class="page-item active">
+						<a class="page-link" href="{{ request.path }}?page={{ i }}">{{ i }}</a>
+					</li>
+				{% else %}
+					<li class="page-item">
+						<a class="page-link" href="{{ request.path }}?page={{ i }}">{{ i }}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+			{% if object_list.has_next %}
+				<li class="page-item">
+					<a class="page-link" href="{{ request.path }}?page={{ object_list.next_page_number }}">&gt;</a>
+				</li>
+			{% else %}
+				<li class="page-item disabled">
+					<a hidden class="page-link" href="#" tabindex="-1" aria-disabled="true">&gt;</a>
+				</li>
+			{% endif %}
+
+
+		</ul>
+	</nav>
+</div>

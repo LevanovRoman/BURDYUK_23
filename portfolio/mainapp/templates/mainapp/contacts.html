@@ -1,0 +1,53 @@
+{% extends 'mainapp/home.html' %}
+{% load static %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'mainapp/css/style-contact.css' %}">
+{% endblock %}
+{% block main %}
+	<main class="main-page">
+		<div class="container">
+		<h1 class="heading">Места моего <span>обитания</span></h1>
+		</div>
+	</main>
+{% endblock main %}
+{% block content %}
+	<section class="contacts-page">
+		<div class="title"><h2>Свяжитесь со мной</h2></div>
+		<div class="cont photo_1">
+			<div class="cont1"><img src="{% static 'mainapp/images/contacts-1.jpg' %}" alt=""></div>
+			<div class="cont2"><img src="{% static 'mainapp/images/contacts-2.jpg' %}" alt=""></div>
+		</div>
+		<div class="cont forms">
+			<form action="{% url 'contacts' %}" method="post">
+                {% csrf_token %}
+				<div class="forms">{{ form.name }}</div>
+<!--				<div class="form-error">{{ form.name.errors }}</div>-->
+				<div class="forms">{{ form.email }}</div>
+<!--				<div class="form-error">{{ form.email.errors }}</div>-->
+				<div class="forms">{{ form.msg }}</div>
+<!--				<div class="form-error">{{ form.msg.errors }}</div>-->
+				<div class="forms-link"><button type="submit">Отправить</button></div>
+			</form>
+		</div>
+		<div class="cont links">
+			<div class="title2">
+				<p>Позвоните мне</p>
+				<p class="write"> или напишите</p>
+			</div>
+			<div class="phone-mail">
+				<p class="ph-number"><i class="icon-phone-1"></i>  8 907 366 33 42</p>
+				<p class="ph-mail"><i class="icon-mail-1"></i>  photomail@yandex.ru</p>
+			</div>
+		</div>
+		<div class="cont photo_2">
+			<div class="cont3"><img src="{% static 'mainapp/images/contacts-3.jpg' %}" alt=""></div>
+		</div>
+
+	</section>
+
+{% endblock content %}
+{% block contacts %}
+{% endblock contacts %}
+{% block content2 %}
+{% endblock content2 %}
+
