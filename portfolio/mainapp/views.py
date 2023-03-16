@@ -167,25 +167,25 @@ class ShowPost(FormMixin, DetailView):
         return super().form_valid(form)
 
 
-class LoginUser(LoginView):
-    form_class = AuthUserForm
-    template_name = 'mainapp/login_page.html'
-    success_url = reverse_lazy('home')
-
-    def post(self, request, *args, **kwargs):
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is None:
-            messages.info(request, 'А может ты не зарегистрирован?')
-
-        form = self.get_form()
-        if form.is_valid():
-            return self.form_valid(form)
-        return self.form_invalid(form)
-
-    def get_success_url(self, **kwargs):
-        return self.success_url
+# class LoginUser(LoginView):
+#     form_class = AuthUserForm
+#     template_name = 'mainapp/login_page.html'
+#     success_url = reverse_lazy('home')
+#
+#     def post(self, request, *args, **kwargs):
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         user = authenticate(request, username=username, password=password)
+#         if user is None:
+#             messages.info(request, 'А может ты не зарегистрирован?')
+#
+#         form = self.get_form()
+#         if form.is_valid():
+#             return self.form_valid(form)
+#         return self.form_invalid(form)
+#
+#     def get_success_url(self, **kwargs):
+#         return self.success_url
 
 
 @csrf_exempt
@@ -199,20 +199,20 @@ def sendEmail(request):
     return render(request, 'mainapp/confirm_template.html')
 
 
-class RegisterUser(CreateView):
-    model = User
-    form_class = RegisterUserForm
-    template_name = 'mainapp/register_page.html'
-    success_url = reverse_lazy('home')
-
-    def form_valid(self, form):
-        form_valid = super().form_valid(form)
-        username = form.cleaned_data['username']
-        email = form.cleaned_data['email']
-        password = form.cleaned_data['password']
-        aut_user = authenticate(username=username, email=email, password=password)
-        login(self.request, aut_user)
-        return form_valid
+# class RegisterUser(CreateView):
+#     model = User
+#     form_class = RegisterUserForm
+#     template_name = 'mainapp/register_page.html'
+#     success_url = reverse_lazy('home')
+#
+#     def form_valid(self, form):
+#         form_valid = super().form_valid(form)
+#         username = form.cleaned_data['username']
+#         email = form.cleaned_data['email']
+#         password = form.cleaned_data['password']
+#         aut_user = authenticate(username=username, email=email, password=password)
+#         login(self.request, aut_user)
+#         return form_valid
 
 
 class LogoutUser(LogoutView):

@@ -23,6 +23,7 @@ from mainapp.views import pageNotFound
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mainapp.urls')),
+    path('users/', include('users.urls')),
 ]
 
 handler404 = pageNotFound

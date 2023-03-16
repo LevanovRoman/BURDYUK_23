@@ -14,8 +14,8 @@ urlpatterns = [
     path('post/<slug:post_slug>/', ShowPost.as_view(), name='post'),
     path('category/<slug:cat_slug>/', BlogCategory.as_view(), name='category'),
     path('portfolio_post/<slug:portf_slug>/', PortfolioPost.as_view(), name='portfolio_post'),
-    path('login/', LoginUser.as_view(), name='login_page'),
-    path('register/', RegisterUser.as_view(), name='register_page'),
+    # path('login/', LoginUser.as_view(), name='login_page'),
+    # path('register/', RegisterUser.as_view(), name='register_page'),
     path('logout/', LogoutUser.as_view(), name='logout_page'),
 
     path('reset_password/', auth_views.PasswordResetView.as_view(template_name="mainapp/password_reset.html"),

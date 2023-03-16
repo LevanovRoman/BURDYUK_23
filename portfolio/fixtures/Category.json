@@ -1,0 +1,1 @@
+[{"model": "mainapp.category", "pk": 1, "fields": {"name": "Личное", "slug": "lichnoe"}}, {"model": "mainapp.category", "pk": 2, "fields": {"name": "Про съемки", "slug": "pro-semki"}}, {"model": "mainapp.category", "pk": 3, "fields": {"name": "Мои планы", "slug": "moi-plany"}}, {"model": "mainapp.category", "pk": 4, "fields": {"name": "Мои заказчики", "slug": "moi-zakazchiki"}}]
